@@ -1,6 +1,6 @@
 [build]
-  command = "bun install && bun run build"
-  publish = "dist/client"
+  command = "bun run build"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
@@ -12,8 +12,3 @@
   SUPABASE_PUBLISHABLE_KEY = "sb_publishable__zNJrJhZihV7Vzc6nOveqA_O7hU1gi5"
   SUPABASE_URL = "https://dterkthbpnhquoloneat.supabase.co"
 
-# Client-side routing fallback so deep links work
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
