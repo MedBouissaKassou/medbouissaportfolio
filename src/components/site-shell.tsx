@@ -33,7 +33,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <footer className="border-t border-border bg-surface py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <p><strong className="text-foreground">BOUISSA MOHAMED</strong> · Full-Stack Developer & Technical Lead</p>
-        <div className="flex gap-5"><a href="#contact" className="story-link">Start a project</a><Link to="/auth" className="story-link">Backoffice</Link></div>
+        <div className="flex gap-5"><a href="#contact" className="story-link">Start a project</a><Link to="/admin" className="story-link">Backoffice</Link></div>
       </div>
     </footer>
     {game && <SignalRunner onClose={() => setGame(false)} />}
