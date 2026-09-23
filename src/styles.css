@@ -186,7 +186,8 @@
   .contact-line span { @apply font-semibold; }
   .contact-line small { @apply mb-1 block font-mono text-[10px] uppercase text-muted-foreground; }
   .field-label { @apply grid gap-2 text-xs font-bold uppercase text-muted-foreground; }
-  .ticker { width: max-content; animation: marquee 22s linear infinite; }
+  .ticker { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+  .ticker-seq { white-space: nowrap; flex-shrink: 0; }
   .focus-card { @apply border border-border bg-card transition hover:-translate-y-1; box-shadow: 0 10px 30px color-mix(in oklab, var(--primary) 7%, transparent); }
   .skill-card { @apply flex min-h-16 items-center gap-3 border border-border bg-card p-4 text-sm transition duration-300 hover:-translate-y-1; box-shadow: 0 8px 24px color-mix(in oklab, var(--primary) 6%, transparent); }
   .skill-accent { @apply h-8 w-2 shrink-0; background: var(--skill-blue); }
