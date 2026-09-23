@@ -2,10 +2,11 @@
 // serverless function runtime — only to the build. The VITE_* values are inlined
 // into the bundle at build time, so mirror them into process.env on startup so
 // server-only code reading SUPABASE_URL / SUPABASE_PUBLISHABLE_KEY keeps working.
+// Dot notation is required: the build only replaces `import.meta.env.VITE_X`.
 const inlined: Record<string, string | undefined> = {
-  SUPABASE_URL: import.meta.env["VITE_SUPABASE_URL"] as string | undefined,
-  SUPABASE_PUBLISHABLE_KEY: import.meta.env["VITE_SUPABASE_PUBLISHABLE_KEY"] as string | undefined,
-  SUPABASE_PROJECT_ID: import.meta.env["VITE_SUPABASE_PROJECT_ID"] as string | undefined,
+  SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+  SUPABASE_PROJECT_ID: import.meta.env.VITE_SUPABASE_PROJECT_ID,
 };
 
 export function hydrateRuntimeEnv() {

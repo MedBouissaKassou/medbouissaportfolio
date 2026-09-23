@@ -1,15 +1,15 @@
 [build]
-  command = "bun run build"
-  publish = "dist"
+  # The .env file is not committed, so write it from the values below before
+  # building — that is what bakes the backend settings into the bundle.
+  command = "bash ./scripts/netlify-build.sh"
+  publish = "dist/client"
 
 [build.environment]
   NODE_VERSION = "22"
   BUN_VERSION = "1.2"
-  NITRO_PRESET = "netlify"
   VITE_SUPABASE_PROJECT_ID = "dterkthbpnhquoloneat"
   VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable__zNJrJhZihV7Vzc6nOveqA_O7hU1gi5"
   VITE_SUPABASE_URL = "https://dterkthbpnhquoloneat.supabase.co"
   SUPABASE_PROJECT_ID = "dterkthbpnhquoloneat"
   SUPABASE_PUBLISHABLE_KEY = "sb_publishable__zNJrJhZihV7Vzc6nOveqA_O7hU1gi5"
   SUPABASE_URL = "https://dterkthbpnhquoloneat.supabase.co"
-
