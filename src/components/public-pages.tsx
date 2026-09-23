@@ -32,7 +32,7 @@ export function HomePage({ data }: { data: Portfolio }) {
           <h1 className="font-display text-[clamp(3.2rem,9vw,8.5rem)] font-black uppercase leading-[.82] tracking-normal">BOUISSA<br/><span className="text-outline">MOHAMED</span></h1>
           <p className="mt-8 max-w-3xl text-lg font-semibold leading-relaxed text-foreground sm:text-2xl">{profile.role}</p>
           <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">{profile.tagline}</p>
-          <div className="mt-9 flex flex-wrap gap-3"><Button size="lg" asChild><a href="#projects">Explore my work <ArrowRight /></a></Button><Button size="lg" variant="outline" asChild><a href="#contact">Start a project</a></Button><Button size="lg" className="play-button md:hidden" onClick={()=>window.dispatchEvent(new Event("open-signal-runner"))}><Gamepad2/> Play game</Button></div>
+          <div className="mt-9 flex flex-wrap gap-3"><Button size="lg" asChild><a href="#projects">Explore my work <ArrowRight /></a></Button><Button size="lg" variant="outline" asChild><a href="#contact">Start a project</a></Button></div>
           <div className="mt-12 grid max-w-xl grid-cols-3 border-y border-border py-5 font-mono text-xs uppercase text-muted-foreground"><span><b className="block font-display text-2xl text-foreground">{profile.years}</b>Years</span><span><b className="block font-display text-2xl text-foreground">14</b>Projects</span><span><b className="block font-display text-2xl text-primary">∞</b>Curiosity</span></div>
         </div>
         <div className="relative mx-auto grid w-full max-w-md place-items-center self-center">
