@@ -1,5 +1,5 @@
 import { ArrowRight, Check, ExternalLink, Mail, MapPin, MessageCircle, Send } from "lucide-react";
-import { useMemo, useState, type FormEvent } from "react";
+import { useMemo, useState, type CSSProperties, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
