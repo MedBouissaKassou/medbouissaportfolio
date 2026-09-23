@@ -1,3 +1,4 @@
+import "./lib/runtime-env";
 import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
