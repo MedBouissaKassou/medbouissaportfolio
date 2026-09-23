@@ -1,24 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HomePage } from "@/components/public-pages";
+import { getPortfolio } from "@/lib/portfolio.functions";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  loader: () => getPortfolio(),
+  head: () => ({ meta: [
+    { title: "Bouissa Mohamed — Full-Stack Developer & Technical Lead" },
+    { name: "description", content: "Full-Stack Developer and Technical Lead building web, mobile, SaaS, AI, Unity, and interactive products." },
+    { property: "og:title", content: "Bouissa Mohamed — Full-Stack Developer & Technical Lead" },
+    { property: "og:description", content: "Engineering ambitious digital products from architecture to launch." },
+    { property: "og:type", content: "website" },
+    { property: "og:image", content: "https://i.ibb.co/Fb6MCxtC/91e3fcbe-6255-454c-a984-bbf0505652e4.jpg" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:image", content: "https://i.ibb.co/Fb6MCxtC/91e3fcbe-6255-454c-a984-bbf0505652e4.jpg" },
+  ] }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <HomePage data={Route.useLoaderData()} />;
 }

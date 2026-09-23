@@ -1,5 +1,27 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790128896924,
+      "tag": "0000_create_portfolio_cms",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790129074428,
+      "tag": "0001_tighten_role_function_permissions",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790129125312,
+      "tag": "0002_fix_public_content_policy_function",
+      "breakpoints": true
+    }
+  ]
 }
