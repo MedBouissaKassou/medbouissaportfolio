@@ -154,6 +154,8 @@
     background-size: 72px 100%;
   }
 
+  html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+
   button, a, input, textarea { letter-spacing: 0; }
   ::selection { background: var(--primary); color: var(--primary-foreground); }
 }
