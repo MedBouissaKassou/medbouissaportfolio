@@ -23,7 +23,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           {links.map(([to, label]) => <a key={to} href={to} className="nav-link">{label}</a>)}
         </nav>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => setGame(true)}><Gamepad2 /> <span className="hidden sm:inline">Play</span></Button>
+          <Button size="sm" className="play-button" onClick={() => setGame(true)}><Gamepad2 /> <span>Play game</span></Button>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMenu(!menu)} aria-label="Toggle navigation">{menu ? <X /> : <Menu />}</Button>
         </div>
       </div>
