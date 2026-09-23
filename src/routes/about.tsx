@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { AboutPage } from "@/components/public-pages";
+import { getPortfolio } from "@/lib/portfolio.functions";
+export const Route=createFileRoute("/about")({loader:()=>getPortfolio(),head:()=>({meta:[{title:"About — Bouissa Mohamed"},{name:"description",content:"Full-stack developer and technical lead across web, mobile, SaaS, AI and Unity."},{property:"og:title",content:"About Bouissa Mohamed"},{property:"og:description",content:"Engineering leadership across web, mobile, SaaS, AI and Unity."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <AboutPage data={Route.useLoaderData()}/>});
