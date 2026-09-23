@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/auth")({
+export const Route = createFileRoute("/admin")({
   head: () => ({ meta: [{ title: "Portfolio Backoffice — Bouissa Mohamed" }, { name: "description", content: "Private portfolio content editor." }, { property: "og:title", content: "Portfolio Backoffice" }, { property: "og:description", content: "Private portfolio content editor." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: AuthPage,
 });
