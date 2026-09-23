@@ -48,7 +48,11 @@ export function AboutPage({ data }: { data: Portfolio }) {
 }
 
 export function SkillsPage({ data }: { data: Portfolio }) {
-  const groups = Object.entries(Object.groupBy(data.skills, s=>s.group_name));
+  const grouped = data.skills.reduce<Record<string, Portfolio["skills"]>>((result, skill) => {
+    (result[skill.group_name] ??= []).push(skill);
+    return result;
+  }, {});
+  const groups = Object.entries(grouped);
   return <SiteShell><PageIntro index="02" title="Skills & stack" subtitle="A multi-disciplinary toolkit for shipping reliable, high-impact products."/><section className="section-wrap"><div className="grid gap-12 lg:grid-cols-2">{groups.map(([group,skills])=><div key={group}><h2 className="mb-6 border-b border-border pb-4 font-display text-xl font-bold uppercase">{group}</h2><div className="space-y-6">{skills?.map(s=><div key={s.id}><div className="mb-2 flex justify-between font-mono text-xs"><span>{s.name}</span><span className="text-primary">{s.level}%</span></div><div className="h-1 bg-muted"><div className="h-full bg-primary skill-bar" style={{"--skill-width":`${s.level}%`} as CSSProperties}/></div></div>)}</div></div>)}</div></section></SiteShell>;
 }
 
